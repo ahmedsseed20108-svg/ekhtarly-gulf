@@ -1,0 +1,17 @@
+name: gulf-collect
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 collect.py
+      - run: |
+          git config user.name bot
+          git config user.email bot@example.com
+          git add gulf-raw.json
+          git commit -m data || true
+          git push
