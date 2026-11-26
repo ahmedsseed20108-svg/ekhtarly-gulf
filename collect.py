@@ -18,7 +18,8 @@ SITES = [
  ("honor-ae", "https://www.hihonor.com", "/ae/", ["/phones/"]),
  ("honor-sa", "https://www.hihonor.com", "/sa/", ["/phones/"]),
 ]
-CAP = 150
+CAP = 900
+SLUGS = ["galaxy-a05", "galaxy-a05s", "galaxy-a06", "galaxy-a06-4g", "galaxy-a06-5g", "galaxy-a07", "galaxy-a07-4g", "galaxy-a07-5g", "galaxy-a07s", "galaxy-a07s-4g", "galaxy-a08", "galaxy-a08-4g", "galaxy-a14", "galaxy-a14-4g", "galaxy-a14-5g", "galaxy-a15", "galaxy-a15-4g", "galaxy-a15-5g", "galaxy-a16", "galaxy-a16-4g", "galaxy-a16-5g", "galaxy-a17", "galaxy-a17-4g", "galaxy-a17-5g", "galaxy-a18", "galaxy-a18-4g", "galaxy-a24", "galaxy-a24-4g", "galaxy-a25", "galaxy-a25-5g", "galaxy-a26", "galaxy-a26-5g", "galaxy-a27", "galaxy-a27-5g", "galaxy-a34", "galaxy-a34-5g", "galaxy-a35", "galaxy-a35-5g", "galaxy-a36", "galaxy-a36-5g", "galaxy-a37", "galaxy-a37-5g", "galaxy-a54", "galaxy-a54-5g", "galaxy-a55", "galaxy-a55-5g", "galaxy-a56", "galaxy-a56-5g", "galaxy-a57", "galaxy-a57-5g", "galaxy-c55", "galaxy-c55-5g", "galaxy-f14", "galaxy-f14-5g", "galaxy-f15", "galaxy-f15-5g", "galaxy-f34", "galaxy-f34-5g", "galaxy-f54", "galaxy-f54-5g", "galaxy-f55", "galaxy-f55-5g", "galaxy-f56", "galaxy-f56-5g", "galaxy-m04", "galaxy-m05", "galaxy-m14", "galaxy-m14-5g", "galaxy-m15", "galaxy-m15-5g", "galaxy-m16", "galaxy-m16-5g", "galaxy-m34", "galaxy-m34-5g", "galaxy-m35", "galaxy-m35-5g", "galaxy-m36", "galaxy-m36-5g", "galaxy-m54", "galaxy-m54-5g", "galaxy-m55", "galaxy-m55-5g", "galaxy-m55s", "galaxy-m55s-5g", "galaxy-m56", "galaxy-m56-5g", "galaxy-quantum-5", "galaxy-s23", "galaxy-s23-fe", "galaxy-s23-plus", "galaxy-s23-ultra", "galaxy-s24", "galaxy-s24-fe", "galaxy-s24-plus", "galaxy-s24-ultra", "galaxy-s24-ultra-5g", "galaxy-s25", "galaxy-s25-edge", "galaxy-s25-fe", "galaxy-s25-plus", "galaxy-s25-slim", "galaxy-s25-slim-5g", "galaxy-s25-ultra", "galaxy-s25-ultra-5g", "galaxy-s26", "galaxy-s26-fe", "galaxy-s26-fe-5g", "galaxy-s26-plus", "galaxy-s26-ultra", "galaxy-s26-ultra-5g", "galaxy-tab-active-5-phone-edition", "galaxy-xcover-7", "galaxy-z-flip-5", "galaxy-z-flip-6", "galaxy-z-flip-7", "galaxy-z-flip-7-fe", "galaxy-z-flip-7-fe-5g", "galaxy-z-flip-8", "galaxy-z-flip-8-5g", "galaxy-z-fold-5", "galaxy-z-fold-6", "galaxy-z-fold-6-slim", "galaxy-z-fold-7", "galaxy-z-fold-8", "galaxy-z-fold-8-5g", "galaxy-z-fold-8-ultra", "galaxy-z-fold-8-ultra-5g", "galaxy-z-fold-special-edition"]
 diag = []
 def sitemaps_for(root):
     found = []
@@ -78,7 +79,15 @@ for key, root, prefix, keys in SITES:
     for sm in sitemaps_for(root):
         locs(sm, 0, prefix, keys, acc, seen)
     acc = list(dict.fromkeys(acc))
-    pick = [u for u in acc if all(k in u for k in keys)] or acc
+    if key.startswith("samsung"):
+        pick = []
+        for u in acc:
+            if "/business/" in u or "/smartphones/" not in u: continue
+            seg = u.rstrip("/").split("/")
+            seg = seg[-2] if seg[-1] == "buy" else seg[-1]
+            if any(seg.startswith(sg + "-") for sg in SLUGS): pick.append(u)
+    else:
+        pick = [u for u in acc if all(k in u for k in keys)]
     pick = pick[:CAP]
     with ThreadPoolExecutor(8) as ex:
         out = list(ex.map(parse, pick))
@@ -86,7 +95,18 @@ for key, root, prefix, keys in SITES:
     for g in got: g["site"] = key
     items += got
     summ.append(f"{key}: urls_in_sitemap={len(acc)} fetched={len(pick)} with_price={len(got)}")
+for dom in ["https://www.mi.com", "https://www.hihonor.com"]:
+    try:
+        rb = get(dom + "/robots.txt", 20)
+        diag.append(dom + " robots: " + re.sub(r"\s+", " ", rb)[:260])
+    except Exception as e:
+        diag.append(dom + " robots ERR " + str(e)[:40])
+    for p in ["/sa/sitemap.xml", "/ae/sitemap.xml", "/sitemap.xml", "/sitemap_index.xml"]:
+        try:
+            x = get(dom + p, 20); diag.append(dom + p + " OK " + str(len(x)) + " loc=" + str(len(re.findall("<loc>", x))))
+        except Exception as e:
+            diag.append(dom + p + " ERR " + str(e)[:30])
 json.dump(items, open("gulf-raw.json", "w"), ensure_ascii=False)
-text = "\n".join(summ + diag[:10] + [f"{i['site']} | {i['name']} | {i['price']} {i['cur']}" for i in items[:12]])
+text = "\n".join(summ + diag[:14] + [f"{i['site']} | {i['name']} | {i['price']} {i['cur']}" for i in items[:6]])
 print(text)
 open(os.environ["GITHUB_STEP_SUMMARY"], "a").write("```\n" + text + "\n```\n")
