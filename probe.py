@@ -1,0 +1,29 @@
+import urllib.request, re, json, os
+UA = {"User-Agent": "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36",
+      "Accept-Language": "en-US,en;q=0.9,ar;q=0.8"}
+URLS = [
+ ("Samsung SA A56", "https://www.samsung.com/sa/smartphones/galaxy-a/galaxy-a56-5g-awesome-graphite-128gb-sm-a566bzkvmea/buy/"),
+ ("Samsung AE A56", "https://www.samsung.com/ae/smartphones/galaxy-a/galaxy-a56-5g-awesome-olive-256gb-sm-a566bzgwmea/buy/"),
+ ("Noon SA search", "https://www.noon.com/saudi-en/search/?q=Samsung%20Galaxy%20A56"),
+ ("Noon AE search", "https://www.noon.com/uae-en/search/?q=Samsung%20Galaxy%20A56"),
+ ("Amazon SA search", "https://www.amazon.sa/s?k=Samsung+Galaxy+A56"),
+ ("Amazon AE search", "https://www.amazon.ae/s?k=Samsung+Galaxy+A56"),
+ ("Jarir search", "https://www.jarir.com/sa-en/catalogsearch/result/?q=galaxy+a56"),
+ ("Extra search", "https://www.extra.com/en-sa/search/?text=galaxy+a56"),
+ ("Sharaf DG search", "https://uae.sharafdg.com/?q=galaxy%20a56&post_type=product"),
+]
+rows = ["| المصدر | الحالة | الحجم | JSON-LD | أسعار ظاهرة |", "|---|---|---|---|---|"]
+for name, url in URLS:
+    try:
+        req = urllib.request.Request(url, headers=UA)
+        with urllib.request.urlopen(req, timeout=25) as r:
+            body = r.read().decode("utf-8", "ignore"); st = r.status
+        ld = len(re.findall(r'application/ld\+json', body))
+        offers = re.findall(r'"(?:price|lowPrice)"\s*:\s*"?([0-9][0-9.,]*)', body)[:4]
+        cur = re.findall(r'"priceCurrency"\s*:\s*"([A-Z]{3})"', body)[:1]
+        rows.append(f"| {name} | {st} | {len(body)//1024}KB | {ld} | {','.join(offers)} {''.join(cur)} |")
+    except Exception as e:
+        rows.append(f"| {name} | ERR {str(e)[:40]} | - | - | - |")
+out = "\n".join(rows)
+print(out)
+open(os.environ["GITHUB_STEP_SUMMARY"], "a").write(out + "\n")
