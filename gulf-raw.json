@@ -1,39 +1,20 @@
 {
- "slugs": [
-  "mobiles-tablets",
-  "mobile-phones",
-  "smartphones",
-  "feature-phones",
-  "re-furbished-mobiles",
-  "mobile-accessories",
-  "mobile-cables",
-  "earphones",
-  "mobile-covers",
-  "mobiles-adapters-and-otgs",
-  "headphone-earphone-accessories",
-  "gaming-headphones"
- ],
- "post": {
-  "mobiles-tablets|plain": "0 ERR <urlopen error timed out>",
-  "mobiles-tablets|seller": "0 ERR <urlopen error timed out>",
-  "mobile-phones|plain": "0 ERR <urlopen error timed out>",
-  "mobile-phones|seller": "0 ERR <urlopen error timed out>",
-  "smartphones|plain": "0 ERR <urlopen error timed out>",
-  "smartphones|seller": "0 ERR <urlopen error timed out>"
- },
- "slug_sample": [
-  "air-conditioners",
-  "mobiles-tablets",
-  "mobile-phones",
-  "smartphones",
-  "feature-phones",
-  "re-furbished-mobiles",
-  "mobile-accessories",
-  "earbuds",
-  "power-banks",
-  "wall-chargers",
-  "vr-glasses",
-  "mobile-cables"
- ],
- "search_get": "0 ERR <urlopen error timed out>"
+ "https://retail.btech.com/api/v1/green/discovery/api/v1/collections/products": "404 ",
+ "https://retail.btech.com/api/v1/green/discovery/collections/products": "404 ",
+ "https://retail.btech.com/discovery/api/v1/collections/products": "404 ",
+ "https://retail.btech.com/api/v1/collections/products": "404 ",
+ "https://btech.com/api/v1/green/discovery/api/v1/collections/products": "404 <!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/><meta name=\"viewport\" content=\"width=de",
+ "https://btech.com/api/v1/green/discovery/collections/products": "404 <!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/><meta name=\"viewport\" content=\"width=de",
+ "https://btech.com/discovery/api/v1/collections/products": "404 <!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta name=\"robots",
+ "https://btech.com/api/v1/collections/products": "404 <!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/><meta name=\"viewport\" content=\"width=de",
+ "https://www.btech.com/api/v1/green/discovery/api/v1/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
+ "https://www.btech.com/api/v1/green/discovery/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
+ "https://www.btech.com/discovery/api/v1/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
+ "https://www.btech.com/api/v1/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
+ "https://retail-online-prod.btech.com/api/v1/green/discovery/api/v1/collections/products": "0 ERR <urlopen error timed out>",
+ "https://retail-online-prod.btech.com/api/v1/green/discovery/collections/products": "0 ERR <urlopen error timed out>",
+ "https://retail-online-prod.btech.com/discovery/api/v1/collections/products": "0 ERR <urlopen error timed out>",
+ "https://retail-online-prod.btech.com/api/v1/collections/products": "0 ERR <urlopen error timed out>",
+ "retail-online-prod root": "0 ERR <urlopen error timed out>",
+ "retail root": "404 "
 }
