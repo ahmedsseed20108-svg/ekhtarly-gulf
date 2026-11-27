@@ -1,48 +1,49 @@
 import urllib.request, re, json, os
+from concurrent.futures import ThreadPoolExecutor
 UA = {"User-Agent": "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36",
       "Accept-Language": "ar,en;q=0.8"}
-def get(url, data=None, hdr=None, to=40):
+def get(url, hdr=None, to=40):
     h = dict(UA)
     if hdr: h.update(hdr)
-    req = urllib.request.Request(url, data=data, headers=h)
-    with urllib.request.urlopen(req, timeout=to) as r:
+    with urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=to) as r:
         return r.status, r.read().decode("utf-8", "ignore")
-out = {}
-URL = "https://btech.com/ar/c/mobiles-tablets/mobile-phones"
-try:
-    st, b = get(URL)
+BASE = "https://btech.com"
+URL = BASE + "/ar/c/mobiles-tablets/mobile-phones"
+out = {"pages": {}, "api": {}, "snips": {}}
+def info(b):
     t = b.replace('\\"', '"')
-    out["status"] = st; out["len"] = len(b)
-    out["hasNextData"] = "__NEXT_DATA__" in b
-    m = re.search(r'/_next/static/([A-Za-z0-9_-]{8,})/_buildManifest', b)
-    out["buildId"] = m.group(1) if m else None
-    urls = set(re.findall(r'https?://[^"\'\s<>\\)]+', t))
-    keep = [u for u in urls if re.search(r'graphql|algolia|typesense|elastic|search|/api/|catalog|product', u, re.I) and not re.search(r'\.(jpg|jpeg|png|webp|svg|gif|css|woff2?|ico)(\?|$)|media\.btech|fonts\.g', u, re.I)]
-    out["api_urls"] = sorted(keep)[:40]
-    out["scripts"] = sorted(set(re.findall(r'<script[^>]+src="([^"]+)"', b)))[:20]
-    ctx = {}
-    for k in ["currentPage", "page_size", "pageSize", "endCursor", "hasNextPage", "nextPage", "total_count", "totalCount", "numFound", "nbHits", "x-algolia", "applicationId", "searchKey"]:
-        i = t.find(k)
-        if i >= 0: ctx[k] = re.sub(r"\s+", " ", t[max(0, i - 80):i + 160])
-    out["ctx"] = ctx
-except Exception as e:
-    out["page_err"] = str(e)[:100]
-out["graphql"] = {}
-Q = '{"query":"{products(search:\\"samsung\\",pageSize:5,currentPage:1){total_count items{name sku}}}"}'.encode()
-for ep in ["https://btech.com/graphql", "https://btech.com/api/graphql", "https://btech.com/ar/graphql", "https://api.btech.com/graphql", "https://btech.com/en/graphql"]:
+    m = re.search(r'"total_items":(\d+),"page":(\d+),"page_size":(\d+),"total_pages":(\d+)', t)
+    skus = re.findall(r'"sku":"([^"]+)"', t)[:3]
+    return {"meta": m.groups() if m else None, "first_skus": skus}
+for q in ["", "?page=2", "?page=2&page_size=100", "?page_size=100", "?p=2", "?page=3"]:
     try:
-        st, b = get(ep, data=Q, hdr={"Content-Type": "application/json", "Store": "ar"})
-        out["graphql"][ep] = f"{st} {b[:250]}"
+        st, b = get(URL + q)
+        out["pages"][q or "base"] = {"st": st, **info(b)}
     except Exception as e:
-        out["graphql"][ep] = "ERR " + str(e)[:60]
-if out.get("buildId"):
-    for p in ["/ar/c/mobiles-tablets/mobile-phones.json?page=2", ]:
-        try:
-            st, b = get(f"https://btech.com/_next/data/{out['buildId']}{p}")
-            out["nextdata"] = f"{st} {len(b)} {b[:200]}"
-        except Exception as e:
-            out["nextdata"] = "ERR " + str(e)[:60]
+        out["pages"][q or "base"] = "ERR " + str(e)[:60]
+try:
+    st, b = get(URL + "?page=2", hdr={"RSC": "1"})
+    out["pages"]["rsc_page2"] = {"st": st, "len": len(b), **info(b)}
+except Exception as e:
+    out["pages"]["rsc_page2"] = "ERR " + str(e)[:60]
+st, html = get(URL)
+scripts = sorted(set(re.findall(r'src="(/_next/static/[^"]+\.js)"', html)))
+out["n_scripts"] = len(scripts)
+def dl(s):
+    try: return s, get(BASE + s, to=40)[1]
+    except Exception: return s, ""
+paths = {}
+with ThreadPoolExecutor(8) as ex:
+    for s, js in ex.map(dl, scripts):
+        for m in re.findall(r'["`\'](/api/[A-Za-z0-9_\-/{}$.?=&]{2,90})', js):
+            paths[m] = paths.get(m, 0) + 1
+        for k in ["page_size", "total_pages", "vxstore", "total_items"]:
+            for mm in list(re.finditer(k, js))[:1]:
+                out["snips"].setdefault(k + "@" + s[-18:], re.sub(r"\s+", " ", js[max(0, mm.start() - 160):mm.start() + 200]))
+out["api_paths"] = dict(sorted(paths.items(), key=lambda x: -x[1])[:40])
+out["snips"] = dict(list(out["snips"].items())[:8])
+for p in list(paths)[:0]: pass
 json.dump(out, open("gulf-raw.json", "w"), ensure_ascii=False, indent=1)
-text = json.dumps(out, ensure_ascii=False, indent=1)[:3500]
+text = json.dumps(out, ensure_ascii=False, indent=1)[:3800]
 print(text)
 open(os.environ["GITHUB_STEP_SUMMARY"], "a").write("```\n" + text + "\n```\n")
