@@ -1,46 +1,39 @@
 {
- "snips": {
-  "NEXT_PUBLIC_API@e1vsau7kotb.js108565": "string().optional(),NEXT_PUBLIC_BASE_URL:r.z.string().optional(),NODE_ENV:i.z.enum([\"development\",\"production\",\"test\"]),NEXT_PUBLIC_API_MOCKING:i.z.enum([\"enabled\",\"disabled\"]).optional().prefault(\"disabled\"),NEXT_PUBLIC_ERROR_REPORTING_ENDPOINT:r.z.string().optional(),NEXT_PUBLIC_ADS_SERVER_API_KEY:r.z.string(),NEXT_PUBLIC_ENVIRONMENT:i.z.enum([\"production\",\"test\",\"development",
-  "NEXT_PUBLIC_API@e1vsau7kotb.js108972": "elopment\"),NEXT_PUBLIC_BTECH_SELLER_ID:r.z.string().optional(),NEXT_PUBLIC_APP_VERSION:r.z.string().prefault(\"unknown\"),NEXT_PUBLIC_API_BASE_URL:r.z.string().nonempty(),NEXT_PUBLIC_GATEWAY_BASE_URL:r.z.string().nonempty(),NEXT_PUBLIC_DISCOVERY_URL:r.z.string().nonempty(),NEXT_PUBLIC_MYLO_OFFERS_BASE_URL:r.z.string().optional(),NEXT_PUBLIC_SHOW_SKU:o.boolean().prefault(!1)}),a={",
-  "API_BASE@e1vsau7kotb.js108984": "EXT_PUBLIC_BTECH_SELLER_ID:r.z.string().optional(),NEXT_PUBLIC_APP_VERSION:r.z.string().prefault(\"unknown\"),NEXT_PUBLIC_API_BASE_URL:r.z.string().nonempty(),NEXT_PUBLIC_GATEWAY_BASE_URL:r.z.string().nonempty(),NEXT_PUBLIC_DISCOVERY_URL:r.z.string().nonempty(),NEXT_PUBLIC_MYLO_OFFERS_BASE_URL:r.z.string().optional(),NEXT_PUBLIC_SHOW_SKU:o.boolean().prefault(!1)}),a={NEXT_PUBLIC_",
-  "API_BASE@e1vsau7kotb.js110238": "LIC_BTECH_SELLER_ID:\"f233878d-c4df-4b14-8816-5c9b6a3d2f84\",NEXT_PUBLIC_APP_VERSION:\"blue-beetle-web-v6.3.0\",NEXT_PUBLIC_API_BASE_URL:\"https://retail.btech.com\",NEXT_PUBLIC_GATEWAY_BASE_URL:\"https://gateway.btechlabs.io\",NEXT_PUBLIC_DISCOVERY_URL:\"https://retail-online-prod.btech.com/api/v1/green/discovery/api/v1\",NEXT_PUBLIC_MYLO_OFFERS_BASE_URL:t.default.env.NEXT_PUBLIC_MYLO_O",
-  "collectionProducts@2kyoffpbqc6.js10778": "slug,page:a,page_size:t,filters:e.filters,...1===a&&{include_filter_tree:!0},sort_by:e.sortBy,type:e.type},n.K.post(o.J.collectionProducts,(i={slug:r.slug,page:r.page,page_size:r.page_size},void 0!==r.include_filter_tree&&(i.include_filter_tree=r.include_filter_tree),r.sort_by&&(i.sort_by=r.sort_by),r.search_query&&(i.search_query=r.search_query),r.type&&(i.type=r.type),i.filte",
-  "baseURL@2kyoffpbqc6.js17256": "nthly\"}];class n{configUrl=\"https://mylo-prod-offers.s3.eu-west-1.amazonaws.com\";campaignId;constructor({merchantName:e,baseURL:t,campaignId:a}){let r=e.trim().toLowerCase();this.configUrl=`${t??this.configUrl}/${r}offer.json`,this.campaignId=a}async getConfigs(){try{let e=await fetch(this.configUrl,{method:\"GET\",cache:\"default\",headers:{\"Content-Type\":\"application/json\"}});if(",
-  "baseURL@2kyoffpbqc6.js20757": "}}var s=e.i(271645),o=e.i(572119),l=e.i(486559);let u=(0,s.createContext)(null),c=()=>{let e=e=>new n({merchantName:l.u,baseURL:o.f.NEXT_PUBLIC_MYLO_OFFERS_BASE_URL,campaignId:e});return{calculatePLP:(t,a)=>e(a).calculatePLP(t),calculatePDP:(t,a)=>e(a).calculatePDP(t)}};e.s([\"InstallmentCalculatorProvider\",0,e=>{let{children:t}=e,[a]=(0,s.useState)(c);return(0,r.jsx)(u.Provider",
-  "collectionProducts@ovxk_mkc9no.js31498": "ries\",productsSearch:\"/products/search\",productsAutocomplete:\"/products/autocomplete\",productDetail:t=>`/products/${t}`,collectionProducts:\"/collections/products\",collectionCenter:\"/collections/center\",productOffers:t=>`/products/${t}/offers`},\"T\",0,{installmentPlans:t=>`/cerebro/api/v2/payment-methods/${t}/installment-plans`,sendOTP:t=>`/cerebro/api/v2/payments/${t}/select-pla",
-  "NEXT_PUBLIC_API@ovxk_mkc9no.js39595": ")=>{let o=e?{...r,localization_code:c()===a.i.ENGLISH?String(a.p.ENGLISH):String(a.p.ARABIC)}:r;return(0,s.f)(`${n??i.f.NEXT_PUBLIC_API_BASE_URL}${t}`,o)},getCredentials:()=>{let t=(0,u.O)();return t?{accessToken:t.accessToken,jwt:t.JWT??null}:null},getJWTExpiresAt:()=>{let t=(0,u.O)();return t?.jwtExpiresAt?new Date(t.jwtExpiresAt):null},onTokenExpiring:()=>h(\"ClientApi:Proact",
-  "API_BASE@ovxk_mkc9no.js39607": "{...r,localization_code:c()===a.i.ENGLISH?String(a.p.ENGLISH):String(a.p.ARABIC)}:r;return(0,s.f)(`${n??i.f.NEXT_PUBLIC_API_BASE_URL}${t}`,o)},getCredentials:()=>{let t=(0,u.O)();return t?{accessToken:t.accessToken,jwt:t.JWT??null}:null},getJWTExpiresAt:()=>{let t=(0,u.O)();return t?.jwtExpiresAt?new Date(t.jwtExpiresAt):null},onTokenExpiring:()=>h(\"ClientApi:ProactiveTokenRefr",
-  "NEXT_PUBLIC_API@yv2wjvtd3z5.js368298": "C_SENTRY_ENVIRONMENT,release:n.f.NEXT_PUBLIC_APP_VERSION,traceLifecycle:\"static\",tracePropagationTargets:(t=[/^\\//],n.f.NEXT_PUBLIC_API_BASE_URL&&t.push(n.f.NEXT_PUBLIC_API_BASE_URL),n.f.NEXT_PUBLIC_GATEWAY_BASE_URL&&t.push(n.f.NEXT_PUBLIC_GATEWAY_BASE_URL),t),beforeSend:(e,t)=>{var n;let i;return(e.request&&(e.request.headers&&(e.request.headers=s(e.request.headers)),e.request",
-  "NEXT_PUBLIC_API@yv2wjvtd3z5.js368335": "_PUBLIC_APP_VERSION,traceLifecycle:\"static\",tracePropagationTargets:(t=[/^\\//],n.f.NEXT_PUBLIC_API_BASE_URL&&t.push(n.f.NEXT_PUBLIC_API_BASE_URL),n.f.NEXT_PUBLIC_GATEWAY_BASE_URL&&t.push(n.f.NEXT_PUBLIC_GATEWAY_BASE_URL),t),beforeSend:(e,t)=>{var n;let i;return(e.request&&(e.request.headers&&(e.request.headers=s(e.request.headers)),e.request.cookies&&delete e.request.cookies,vo"
- },
- "hosts": [
-  "https://adserver.btechads.com",
-  "https://adsserverstg.btech.com",
-  "https://adsservertest.btech.com",
-  "https://gateway.btechlabs.io",
-  "https://retail-online-prod.btech.com/api/v1/green/discovery/api/v1",
-  "https://retail.btech.com"
+ "slugs": [
+  "mobiles-tablets",
+  "mobile-phones",
+  "smartphones",
+  "feature-phones",
+  "re-furbished-mobiles",
+  "mobile-accessories",
+  "mobile-cables",
+  "earphones",
+  "mobile-covers",
+  "mobiles-adapters-and-otgs",
+  "headphone-earphone-accessories",
+  "gaming-headphones"
  ],
  "post": {
-  "https://btech.com/collections/products slug=mobile-phones": "ERR HTTP Error 400: Bad Request",
-  "https://btech.com/collections/products slug=mobiles-tablets/mobile-phones": "ERR HTTP Error 400: Bad Request",
-  "https://btech.com/api/collections/products slug=mobile-phones": "ERR HTTP Error 400: Bad Request",
-  "https://btech.com/api/collections/products slug=mobiles-tablets/mobile-phones": "ERR HTTP Error 400: Bad Request",
-  "https://api.btech.com/collections/products slug=mobile-phones": "ERR HTTP Error 521: <none>",
-  "https://api.btech.com/collections/products slug=mobiles-tablets/mobile-phones": "ERR HTTP Error 521: <none>",
-  "https://adsservertest.btech.com/collections/products slug=mobile-phones": "ERR <urlopen error timed out>",
-  "https://adsservertest.btech.com/collections/products slug=mobiles-tablets/mobile-phones": "ERR <urlopen error timed out>",
-  "https://adsserverstg.btech.com/collections/products slug=mobile-phones": "ERR <urlopen error timed out>",
-  "https://adsserverstg.btech.com/collections/products slug=mobiles-tablets/mobile-phones": "ERR <urlopen error timed out>",
-  "https://retail.btech.com/collections/products slug=mobile-phones": "ERR HTTP Error 400: Bad Request",
-  "https://retail.btech.com/collections/products slug=mobiles-tablets/mobile-phones": "ERR HTTP Error 400: Bad Request",
-  "https://gateway.btechlabs.io/collections/products slug=mobile-phones": "200 <html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 57692",
-  "https://retail-online-prod.btech.com/collections/products slug=mobile-phones": "ERR HTTP Error 403: Forbidden",
-  "https://retail-online-prod.btech.com/collections/products slug=mobiles-tablets/mobile-phones": "ERR HTTP Error 403: Forbidden",
-  "https://adserver.btechads.com/collections/products slug=mobile-phones": "ERR HTTP Error 404: Not Found",
-  "https://adserver.btechads.com/collections/products slug=mobiles-tablets/mobile-phones": "ERR HTTP Error 404: Not Found"
+  "mobiles-tablets|plain": "0 ERR <urlopen error timed out>",
+  "mobiles-tablets|seller": "0 ERR <urlopen error timed out>",
+  "mobile-phones|plain": "0 ERR <urlopen error timed out>",
+  "mobile-phones|seller": "0 ERR <urlopen error timed out>",
+  "smartphones|plain": "0 ERR <urlopen error timed out>",
+  "smartphones|seller": "0 ERR <urlopen error timed out>"
  },
- "paths": [
-  "/collections/products"
- ]
+ "slug_sample": [
+  "air-conditioners",
+  "mobiles-tablets",
+  "mobile-phones",
+  "smartphones",
+  "feature-phones",
+  "re-furbished-mobiles",
+  "mobile-accessories",
+  "earbuds",
+  "power-banks",
+  "wall-chargers",
+  "vr-glasses",
+  "mobile-cables"
+ ],
+ "search_get": "0 ERR <urlopen error timed out>"
 }
