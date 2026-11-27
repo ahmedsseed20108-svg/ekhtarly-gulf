@@ -1,46 +1,49 @@
-import urllib.request, re, json, os
-from concurrent.futures import ThreadPoolExecutor
+import urllib.request, urllib.error, re, json, os
 UA = {"User-Agent": "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36",
       "Accept-Language": "ar,en;q=0.8"}
 def req(url, data=None, hdr=None, to=40):
     h = dict(UA)
     if hdr: h.update(hdr)
-    with urllib.request.urlopen(urllib.request.Request(url, data=data, headers=h), timeout=to) as r:
-        return r.status, r.read().decode("utf-8", "ignore")
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, data=data, headers=h), timeout=to) as r:
+            return r.status, r.read().decode("utf-8", "ignore")
+    except urllib.error.HTTPError as e:
+        return e.code, e.read().decode("utf-8", "ignore")
+    except Exception as e:
+        return 0, "ERR " + str(e)[:60]
 BASE = "https://btech.com"
 URL = BASE + "/ar/c/mobiles-tablets/mobile-phones"
-out = {"snips": {}, "hosts": [], "post": {}}
+D = "https://retail-online-prod.btech.com/api/v1/green/discovery/api/v1"
+SELLER = "f233878d-c4df-4b14-8816-5c9b6a3d2f84"
+out = {"slugs": [], "post": {}}
 st, html = req(URL)
-scripts = sorted(set(re.findall(r'src="(/_next/static/[^"]+\.js)"', html)))
-def dl(s):
-    try: return s, req(BASE + s)[1]
-    except Exception: return s, ""
-allhosts = set(); paths = {}
-with ThreadPoolExecutor(8) as ex:
-    for s, js in ex.map(dl, scripts):
-        for k in ["collectionProducts", "baseURL", "NEXT_PUBLIC_API", "API_URL", "API_BASE"]:
-            for mm in list(re.finditer(k, js))[:2]:
-                out["snips"][k + "@" + s[-14:] + str(mm.start())] = re.sub(r"\s+", " ", js[max(0, mm.start() - 120):mm.start() + 260])
-        for h in re.findall(r'https://[a-z0-9.\-]*btech[a-z0-9.\-]*[^"\'`\s\\)]{0,60}', js):
-            allhosts.add(h)
-        for m in re.findall(r'collectionProducts:"([^"]+)"', js):
-            paths[m] = 1
-out["hosts"] = sorted(allhosts)[:40]
-out["paths"] = list(paths)
-out["snips"] = dict(list(out["snips"].items())[:12])
-slugs = ["mobile-phones", "mobiles-tablets/mobile-phones", "mobiles-tablets", "mobile-phones-tablets"]
-bases = [BASE, BASE + "/api", "https://api.btech.com"] + [h.split("/", 3)[0] + "//" + h.split("/")[2] for h in list(allhosts)[:6]]
-for b in dict.fromkeys(bases):
-    for p in (list(paths) or ["/api/collections/products"]):
-        for sl in slugs[:2]:
-            body = json.dumps({"slug": sl, "page": 2, "page_size": 20}).encode()
-            key = b + p + " slug=" + sl
-            try:
-                st, r = req(b + p, data=body, hdr={"Content-Type": "application/json", "Accept": "application/json", "Origin": BASE, "Referer": URL})
-                out["post"][key] = f"{st} {r[:160]}"
-                if st == 200: break
-            except Exception as e:
-                out["post"][key] = "ERR " + str(e)[:50]
+t = html.replace('\\"', '"')
+sl = []
+for m in re.findall(r'"slug":"([^"]+)"', t):
+    if m not in sl: sl.append(m)
+out["slugs"] = [s for s in sl if "mobile" in s or "phone" in s][:12]
+out["slug_sample"] = sl[:12]
+cands = list(dict.fromkeys(out["slugs"] + ["mobile-phones", "mobiles-tablets", "mobiles-tablets/mobile-phones"]))[:6]
+H = [
+ ("plain", {"Content-Type": "application/json", "Accept": "application/json"}),
+ ("origin", {"Content-Type": "application/json", "Accept": "application/json", "Origin": BASE, "Referer": URL}),
+ ("seller", {"Content-Type": "application/json", "Accept": "application/json", "Origin": BASE, "Referer": URL, "x-seller-id": SELLER, "seller-id": SELLER, "localization_code": "2", "Accept-Language": "ar"}),
+]
+done = False
+for s in cands:
+    for hn, hh in H:
+        body = json.dumps({"slug": s, "page": 2, "page_size": 20}).encode()
+        code, r = req(D + "/collections/products", data=body, hdr=hh)
+        out["post"][f"{s}|{hn}"] = f"{code} {r[:220]}"
+        if code == 200 and '"page"' in r:
+            out["WIN"] = {"slug": s, "hdr": hn}
+            m = re.search(r'"total_items":(\d+)', r)
+            out["WIN"]["meta"] = re.findall(r'"(?:total_items|page|page_size|total_pages)":\d+', r)[:6]
+            out["WIN"]["sample"] = r[:900]
+            done = True; break
+    if done: break
+code, r = req(D + "/products/search?query=samsung&page=1&page_size=5", hdr={"Accept": "application/json", "Origin": BASE})
+out["search_get"] = f"{code} {r[:200]}"
 json.dump(out, open("gulf-raw.json", "w"), ensure_ascii=False, indent=1)
 text = json.dumps(out, ensure_ascii=False, indent=1)[:3800]
 print(text)
