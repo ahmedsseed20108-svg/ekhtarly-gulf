@@ -1,39 +1,115 @@
 {
- "status": 200,
- "len": 540912,
- "hasNextData": false,
- "buildId": null,
- "api_urls": [],
- "scripts": [
-  "/_next/static/chunks/00ox3hc6kvwzb.js",
-  "/_next/static/chunks/04-hcuig6koua.js",
-  "/_next/static/chunks/08cu3rlnxg_5v.js",
-  "/_next/static/chunks/0babfqj0o1pd3.js",
-  "/_next/static/chunks/0cz1d0mv5g_q7.js",
-  "/_next/static/chunks/0g-ucsf1e22sd.js",
-  "/_next/static/chunks/0ge1vsau7kotb.js",
-  "/_next/static/chunks/0h5v2imerwnwi.js",
-  "/_next/static/chunks/0pmjmzd8ivqrr.js",
-  "/_next/static/chunks/0ptdcmvydppuv.js",
-  "/_next/static/chunks/0tza98vql43q7.js",
-  "/_next/static/chunks/110-xq-_0u9_r.js",
-  "/_next/static/chunks/15h94zm-dc67q.js",
-  "/_next/static/chunks/162kyoffpbqc6.js",
-  "/_next/static/chunks/192ic9bx7i3hn.js",
-  "/_next/static/chunks/1d91fxt-p5w25.js",
-  "/_next/static/chunks/1fyhrdjd-ekj_.js",
-  "/_next/static/chunks/1l20samb1otv2.js",
-  "/_next/static/chunks/1wovxk_mkc9no.js",
-  "/_next/static/chunks/1xm9m74xrd4th.js"
- ],
- "ctx": {
-  "page_size": "\":\"vxstore\",\"store_name\":\"vxstore\",\"tech_care\":[]}],\"total_items\":853,\"page\":1,\"page_size\":20,\"total_pages\":43,\"filters\":[\"$9e:props:children:1:props:children:1:props:filters:0\",{\"key\":\"categories\",\"name\":\"الفئة\",\"type\":\"multi_select\",\"styl"
+ "pages": {
+  "base": {
+   "st": 200,
+   "meta": [
+    "852",
+    "1",
+    "20",
+    "43"
+   ],
+   "first_skus": [
+    "1BINMOBISMT20SB1L007",
+    "1BHOOMSMHOCH44SLL008",
+    "1BRMOMSMREC856BLL006"
+   ]
+  },
+  "?page=2": {
+   "st": 200,
+   "meta": [
+    "852",
+    "1",
+    "20",
+    "43"
+   ],
+   "first_skus": [
+    "1BINMOBISMT20SB1L007",
+    "1BHOOMSMHOCH44SLL008",
+    "1BRMOMSMREC856BLL006"
+   ]
+  },
+  "?page=2&page_size=100": {
+   "st": 200,
+   "meta": [
+    "852",
+    "1",
+    "20",
+    "43"
+   ],
+   "first_skus": [
+    "1BINMOBISMT20PT1L009",
+    "1BHOOMSMHOCH44SLL008",
+    "1BINMOBISMT20SB6L007"
+   ]
+  },
+  "?page_size=100": {
+   "st": 200,
+   "meta": [
+    "852",
+    "1",
+    "20",
+    "43"
+   ],
+   "first_skus": [
+    "1BINMOBISMT20PT1L009",
+    "1BHOOMSMHOCH44SLL008",
+    "1BINMOBISMT20SB6L007"
+   ]
+  },
+  "?p=2": {
+   "st": 200,
+   "meta": [
+    "852",
+    "1",
+    "20",
+    "43"
+   ],
+   "first_skus": [
+    "1BINMOBISMT20SB1L007",
+    "1BHOOMSMHOCH44SLL008",
+    "1BRMOMSMREC856BLL006"
+   ]
+  },
+  "?page=3": {
+   "st": 200,
+   "meta": [
+    "852",
+    "1",
+    "20",
+    "43"
+   ],
+   "first_skus": [
+    "1BINMOBISMT20PT1L009",
+    "1BHOOMSMHOCH44SLL008",
+    "1BINMOBISMT20SB6L007"
+   ]
+  },
+  "rsc_page2": {
+   "st": 200,
+   "len": 382092,
+   "meta": [
+    "852",
+    "1",
+    "20",
+    "43"
+   ],
+   "first_skus": [
+    "1BINMOBISMT20PT1L009",
+    "1BXIOMSMNO174G8BL007",
+    "1BINMOBISMT20CB6L006"
+   ]
+  }
  },
- "graphql": {
-  "https://btech.com/graphql": "ERR HTTP Error 403: Forbidden",
-  "https://btech.com/api/graphql": "ERR HTTP Error 400: Bad Request",
-  "https://btech.com/ar/graphql": "ERR HTTP Error 403: Forbidden",
-  "https://api.btech.com/graphql": "ERR HTTP Error 403: Forbidden",
-  "https://btech.com/en/graphql": "ERR HTTP Error 403: Forbidden"
+ "api": {},
+ "snips": {
+  "page_size@s/162kyoffpbqc6.js": "ed:s=!0})=>(0,t.f)({...((e,t=Number(g.$))=>(0,b.f)({queryKey:T.list(e.slug,e.filters),queryFn:async({pageParam:a})=>{var r;let i,s=await (r={slug:e.slug,page:a,page_size:t,filters:e.filters,...1===a&&{include_filter_tree:!0},sort_by:e.sortBy,type:e.type},n.K.post(o.J.collectionProducts,(i={slug:r.slug,page:r.page,page_size:r.page_size},void 0!==r.include_fil",
+  "total_pages@s/162kyoffpbqc6.js": "e:t.toString(),size:e},n.K.get(o.n.wishlist,{params:a}));if(!r)throw new y.i(\"No products found\");return r},initialPageParam:g.d,getNextPageParam:e=>e.page+1>e.total_pages?null:e.page+1}),A={all:[\"discovery-search\"],list:(e,t,a)=>[...A.all,\"list\",e??\"\",t,a]},T={all:[\"discovery-collection\"],list:(e,t)=>[...T.all,\"list\",e,t]};(0,v.f)({queryKey:[\"discovery-coll"
+ },
+ "n_scripts": 38,
+ "api_paths": {
+  "/api/surveys/": 1,
+  "/api/early_access_features/?token=${r.projectToken}${n}": 1,
+  "/api/product_tours/?token=${this._instance.config.token}": 1,
+  "/api/web_experiments/?token=${this.Ar.token}": 1
  }
 }
