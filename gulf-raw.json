@@ -1,305 +1,172 @@
 {
- "brand_ids": [
-  [
-   "apple",
-   "ابل",
-   "166"
-  ],
-  [
-   "hmd",
-   "اتش ام دي",
-   "3"
-  ],
-  [
-   "action",
-   "اكشن",
-   "3"
-  ],
-  [
-   "infinix",
-   "انفنكس",
-   "69"
-  ],
-  [
-   "oppo",
-   "اوبو",
-   "64"
-  ],
-  [
-   "allcall",
-   "اول كول",
-   "3"
-  ],
-  [
-   "itel",
-   "ايتل",
-   "17"
-  ],
-  [
-   "tecno",
-   "تكنو",
-   "30"
-  ],
-  [
-   "realme",
-   "ريلمي",
-   "61"
-  ],
-  [
-   "zte",
-   "زد تي اي",
-   "3"
-  ],
-  [
-   "samsung",
-   "سامسونج",
-   "156"
-  ],
-  [
-   "sunelan",
-   "سونيلان",
-   "5"
-  ]
- ],
- "bid": "samsung",
  "tests": {
-  "?brands=samsung": {
+  "brands_arr": {
    "meta": [
-    "866",
+    "156",
     "1",
     "20",
-    "44"
+    "8"
    ],
-   "skus": [
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17BK00L007",
-    "6647A735ABBBBE5B8D6C"
+   "n_names": 0,
+   "names": [],
+   "prices": [
+    "11660",
+    "12149",
+    "17449",
+    "42520",
+    "9270",
+    "17449"
    ],
    "st": 200,
-   "diff": true
+   "q": "?filters=%7B%22brands%22%3A%5B%22samsung%22%5D%7D"
   },
-  "?brands[]=samsung": {
+  "brands_str": {
    "meta": null,
-   "skus": [],
-   "st": 400,
-   "diff": true
+   "n_names": 0,
+   "names": [],
+   "prices": [],
+   "st": 200,
+   "q": "?filters=%7B%22brands%22%3A%22samsung%22%7D"
   },
-  "?brands%5B%5D=samsung": {
+  "brands_arr_page2": {
+   "meta": [
+    "156",
+    "1",
+    "20",
+    "8"
+   ],
+   "n_names": 0,
+   "names": [],
+   "prices": [
+    "11660",
+    "12149",
+    "17449",
+    "42520",
+    "9270",
+    "17449"
+   ],
+   "st": 200,
+   "q": "?filters=%7B%22brands%22%3A%5B%22samsung%22%5D%7D&page=2"
+  },
+  "samsung_asc": {
+   "meta": [
+    "156",
+    "1",
+    "20",
+    "8"
+   ],
+   "n_names": 1,
+   "names": [
+    "سامسونج جورو ميوزيك 2 ، شريحتين - ازرق"
+   ],
+   "prices": [
+    "899",
+    "9199",
+    "9270",
+    "9270",
+    "9499",
+    "9499"
+   ],
+   "st": 200,
+   "q": "?filters=%7B%22brands%22%3A%5B%22samsung%22%5D%7D&sort=price_asc"
+  },
+  "samsung_desc": {
+   "meta": [
+    "156",
+    "1",
+    "20",
+    "8"
+   ],
+   "n_names": 0,
+   "names": [],
+   "prices": [
+    "159999",
+    "145666",
+    "143000",
+    "143000",
+    "143000",
+    "142999"
+   ],
+   "st": 200,
+   "q": "?filters=%7B%22brands%22%3A%5B%22samsung%22%5D%7D&sort=price_desc"
+  },
+  "xiaomi": {
+   "meta": [
+    "104",
+    "1",
+    "20",
+    "6"
+   ],
+   "n_names": 0,
+   "names": [],
+   "prices": [
+    "15840",
+    "24850",
+    "32550",
+    "24850",
+    "24850",
+    "34204"
+   ],
+   "st": 200,
+   "q": "?filters=%7B%22brands%22%3A%5B%22xiaomi%22%5D%7D"
+  },
+  "pr_arr": {
    "meta": null,
-   "skus": [],
-   "st": 400,
-   "diff": true
+   "n_names": 0,
+   "names": [],
+   "prices": [],
+   "st": 200,
+   "q": "?filters=%7B%22brands%22%3A%5B%22samsung%22%5D%2C%22price_range%22%3A%5B10000%2C20000%5D%7"
   },
-  "?filters=brands:samsung": {
+  "pr_obj": {
    "meta": [
-    "866",
+    "47",
     "1",
     "20",
-    "44"
+    "3"
    ],
-   "skus": [
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17BK00L007",
-    "6647A735ABBBBE5B8D6C"
+   "n_names": 0,
+   "names": [],
+   "prices": [
+    "11660",
+    "12149",
+    "17449",
+    "17449",
+    "17249",
+    "14980"
    ],
    "st": 200,
-   "diff": true
+   "q": "?filters=%7B%22brands%22%3A%5B%22samsung%22%5D%2C%22price_range%22%3A%7B%22min%22%3A10000%"
   },
-  "?filters[brands]=samsung": {
+  "pr_str": {
    "meta": null,
-   "skus": [],
-   "st": 400,
-   "diff": true
-  },
-  "?filter=brands:samsung": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPOMSMIP17BK00L007",
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17LAV0L064"
-   ],
+   "n_names": 0,
+   "names": [],
+   "prices": [],
    "st": 200,
-   "diff": true
+   "q": "?filters=%7B%22brands%22%3A%5B%22samsung%22%5D%2C%22price_range%22%3A%2210000-20000%22%7D"
   },
-  "?f=brands:samsung": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPOMSMIP17BK00L007",
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17LAV0L064"
-   ],
+  "sort_newest": {
+   "meta": null,
+   "n_names": 0,
+   "names": [],
+   "prices": [],
    "st": 200,
-   "diff": true
+   "q": "?sort=newest"
   },
-  "?brands=samsung&page=1": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17BK00L007",
-    "6647A735ABBBBE5B8D6C"
-   ],
+  "sort_latest": {
+   "meta": null,
+   "n_names": 0,
+   "names": [],
+   "prices": [],
    "st": 200,
-   "diff": true
-  },
-  "?sort_by=price_asc": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17BK00L007",
-    "6647A735ABBBBE5B8D6C"
-   ],
-   "st": 200,
-   "diff": true
-  },
-  "?sort_by=price_desc": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPOMSMIP17BK00L007",
-    "1BAPMOBIIP18PM25L004",
-    "6647A735ABBBBE5B8D6C"
-   ],
-   "st": 200,
-   "diff": false
-  },
-  "?sort_by=newest": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPOMSMIP17BK00L007",
-    "1BAPMOBIIP18PM25L004",
-    "6647A735ABBBBE5B8D6C"
-   ],
-   "st": 200,
-   "diff": false
-  },
-  "?sort=price_asc": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "5F8126D2537B45654644",
-    "52AC90C5E2AD9EEDF8DE",
-    "1BA0340B31396778A8B5"
-   ],
-   "st": 200,
-   "diff": true
-  },
-  "?sort=price_desc": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "60675EC41B7CEE6FBCF8",
-    "DA2CF019CEF6D43C9B40",
-    "6E5DAA11B2E912CD2959"
-   ],
-   "st": 200,
-   "diff": true
-  },
-  "?sortBy=price_asc": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17BK00L007",
-    "6647A735ABBBBE5B8D6C"
-   ],
-   "st": 200,
-   "diff": true
-  },
-  "?order_by=price_asc": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17BK00L007",
-    "6647A735ABBBBE5B8D6C"
-   ],
-   "st": 200,
-   "diff": true
-  },
-  "?sort_by=price-asc": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPOMSMIP17BK00L007",
-    "1BAPMOBIIP18PM25L004",
-    "1BAPOMSMIP17LAV0L064"
-   ],
-   "st": 200,
-   "diff": true
-  },
-  "?sort_by=price_low_to_high": {
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "skus": [
-    "1BAPOMSMIP17BK00L007",
-    "1BAPMOBIIP18PM25L004",
-    "6647A735ABBBBE5B8D6C"
-   ],
-   "st": 200,
-   "diff": false
+   "q": "?sort=latest"
   }
  },
- "code_snips": {
-  "d0mv5g_q7.js70725": "eturn e&&e.value},Tp=dt(\"iterator\"),Mp=!a(function(){var t=new URL(\"b?a=1&b=2&c=3\",\"https://a\"),e=t.searchParams,r=new URLSearchParams(\"a=1&a=2&b=3\"),n=\"\";return t.pathname=\"c%20d\",e.forEach(function(t,r){e.delete(\"b\"),n+=r+t}),r.delete(\"a\",2),r.delete(\"b\",void 0),!e.size&&!u||!e.sort||\"https://a/c%20d?a=1&c=3\"!==t.hre",
-  "d0mv5g_q7.js70744": "p=dt(\"iterator\"),Mp=!a(function(){var t=new URL(\"b?a=1&b=2&c=3\",\"https://a\"),e=t.searchParams,r=new URLSearchParams(\"a=1&a=2&b=3\"),n=\"\";return t.pathname=\"c%20d\",e.forEach(function(t,r){e.delete(\"b\"),n+=r+t}),r.delete(\"a\",2),r.delete(\"b\",void 0),!e.size&&!u||!e.sort||\"https://a/c%20d?a=1&c=3\"!==t.href||\"3\"!==e.get(\"c\")",
-  "d0mv5g_q7.js70985": "d 0),!e.size&&!u||!e.sort||\"https://a/c%20d?a=1&c=3\"!==t.href||\"3\"!==e.get(\"c\")||\"a=1\"!==String(new URLSearchParams(\"?a=1\"))||!e[Tp]||\"a\"!==new URL(\"https://a@b\").username||\"b\"!==new URLSearchParams(new URLSearchParams(\"a=b\")).get(\"a\")||\"xn--e1aybc\"!==new URL(\"https://тест\").host||\"#%D0%B1\"!==new URL(\"https://a#б\").has",
-  "cmvydppuv.js98340": "ar t=e.i(618566),n=e.i(271645);e.s([\"f\",0,()=>{let e=(0,t.useRouter)(),r=(0,t.usePathname)(),i=(0,t.useSearchParams)(),l=(0,n.useMemo)(()=>{let e=i.get(\"filters\");if(!e)return{};try{return JSON.parse(e)}catch{return{}}},[i]),s=i.get(\"sort\")||void 0,o=(0,n.useCallback)(t=>{let n=t.toString();n!==i.toString()&&e.push(n?`",
-  "cmvydppuv.js98972": "N.stringify(n)):t.delete(\"filters\"),t.delete(\"page\"),o(t)},[i,o]),u=(0,n.useCallback)(e=>{let t=new URLSearchParams(i);e?t.set(\"sort\",e):t.delete(\"sort\"),t.delete(\"page\"),o(t)},[i,o]),c=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"page\"),o(e)},[i,o]),d=(0,n.useCallback)(()=>{let e=n",
-  "cmvydppuv.js99091": "e?t.set(\"sort\",e):t.delete(\"sort\"),t.delete(\"page\"),o(t)},[i,o]),c=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"page\"),o(e)},[i,o]),d=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"sort\"),e.delete(\"page\"),o(e)},[i,o]),h=(0,n.useCallback)(e=>{let t=",
-  "cmvydppuv.js99195": "earchParams(i);e.delete(\"filters\"),e.delete(\"page\"),o(e)},[i,o]),d=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"sort\"),e.delete(\"page\"),o(e)},[i,o]),h=(0,n.useCallback)(e=>{let t={...l};delete t[e],a(t)},[l,a]);return{filters:l,sort:s,updateFilters:a,updateSort:u,clearFilters:c,clea",
-  "xk_mkc9no.js58691": "mEntries(Object.entries(e).filter(([,t])=>null!=t));if(0===Object.keys(i).length)return t;let r=new URLSearchParams(i).toString();return`${t}?${r}`}])},151329,t=>{t.i(490466);let e=async(t,e,i=!1)=>{await Promise.all(e.map(e=>t.invalidateQueries({queryKey:e,exact:i,refetchType:\"all\"})))},i=async(t,e)=>{await Promise.al"
+ "sort_snips": {
+  "2imerwnwi.js36": "eof e&&null!==e&&\"min\"in e&&\"max\"in e):0;var v=e.i(955128),y=e.i(549838);let _=\"sort\",w=[{value:n.g.default,translationKey:\"plp_sort_default_title\"},{value:n.g.price_asc,translationKey:\"plp_sort_low_to_high_title\"},{value:n.g.price_desc,translationKey:\"plp_sort_high_to_low_title\"}],j=e=>{let{currentSort:r,onSortChange:i}=e,[a,s]=(0,p.useState)([_]),n=(0,u.f)();return(0,t.jsx)(h.i,{type:\"multiple\",value:a,onValueChang",
+  "cmvydppuv.js218": "69),eX=e.i(948148),eY=e.i(109799);e.s([\"SortDropdown\",0,function(){let{sort:e,updateSort:i}=(0,eU.f)(),l=(0,eX.f)(),[,s]=(0,r.useTransition)(),o=()=>e?e===eY.g.price_desc?l(\"plp_sort_high_to_low_title\"):e===eY.g.price_asc?l(\"plp_sort_low_to_high_title\"):l(\"plp_sort_default_title\"):l(\"plp_sort_default_title\");return(0,t.jsxs)(eV,{children:[(0,t.jsx)(eB,{asChild:!0,children:(0,t.jsxs)(\"button\",{className:\"flex items-ce",
+  "cmvydppuv.js220": "i(\"default\"===e?void 0:e)})},children:[(0,t.jsx)(eH,{value:\"default\",className:\"cursor-pointer\",children:l(\"plp_sort_default_title\")}),(0,t.jsx)(eH,{value:eY.g.price_desc,children:l(\"plp_sort_high_to_low_title\")}),(0,t.jsx)(eH,{value:eY.g.price_asc,children:l(\"plp_sort_low_to_high_title\")})]})})]})}],969258)},707101,e=>{var t=e.i(843476);let n={src:e.i(607274).default,width:95,height:95,blurWidth:0,blurHeight:0};var ",
+  "yoffpbqc6.js36": "\"EGP\",\"C\",0,\"item_coupon\",\"Q\",0,\"promotion\",\"d\",()=>s,\"V\",()=>n,\"N\",()=>i,\"D\",0,\"has_free_installation\",\"a\",0,\"has_installation_fees\"])},109799,e=>{e.s([\"V\",0,{price_asc:\"price\",price_desc:\"price\",default:\"availability\"},\"g\",0,{price_asc:\"price_asc\",price_desc:\"price_desc\",default:\"default\"}])},611597,e=>{var t,a=e.i(572119),r=((t={}).PRODUCTS=\"catalogs\",t.CATEGORIES=\"categories\",t.COLLECTIONS=\"collections\",t);e.s([\""
  }
 }
