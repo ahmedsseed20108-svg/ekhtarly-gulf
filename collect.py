@@ -1,7 +1,7 @@
 import urllib.request, urllib.error, re, json, os
 UA = {"User-Agent": "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36",
       "Accept-Language": "ar,en;q=0.8"}
-def req(url, data=None, hdr=None, to=40):
+def req(url, data=None, hdr=None, to=12):
     h = dict(UA)
     if hdr: h.update(hdr)
     try:
@@ -16,17 +16,16 @@ URL = BASE + "/ar/c/mobiles-tablets/mobile-phones"
 D = "https://retail-online-prod.btech.com/api/v1/green/discovery/api/v1"
 SELLER = "f233878d-c4df-4b14-8816-5c9b6a3d2f84"
 out = {"slugs": [], "post": {}}
-st, html = req(URL)
+st, html = req(URL, to=30)
 t = html.replace('\\"', '"')
 sl = []
 for m in re.findall(r'"slug":"([^"]+)"', t):
     if m not in sl: sl.append(m)
 out["slugs"] = [s for s in sl if "mobile" in s or "phone" in s][:12]
 out["slug_sample"] = sl[:12]
-cands = list(dict.fromkeys(out["slugs"] + ["mobile-phones", "mobiles-tablets", "mobiles-tablets/mobile-phones"]))[:6]
+cands = list(dict.fromkeys(out["slugs"] + ["mobile-phones", "mobiles-tablets/mobile-phones"]))[:3]
 H = [
  ("plain", {"Content-Type": "application/json", "Accept": "application/json"}),
- ("origin", {"Content-Type": "application/json", "Accept": "application/json", "Origin": BASE, "Referer": URL}),
  ("seller", {"Content-Type": "application/json", "Accept": "application/json", "Origin": BASE, "Referer": URL, "x-seller-id": SELLER, "seller-id": SELLER, "localization_code": "2", "Accept-Language": "ar"}),
 ]
 done = False
