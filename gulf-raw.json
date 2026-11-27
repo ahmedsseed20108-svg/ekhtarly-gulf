@@ -1,20 +1,197 @@
 {
- "https://retail.btech.com/api/v1/green/discovery/api/v1/collections/products": "404 ",
- "https://retail.btech.com/api/v1/green/discovery/collections/products": "404 ",
- "https://retail.btech.com/discovery/api/v1/collections/products": "404 ",
- "https://retail.btech.com/api/v1/collections/products": "404 ",
- "https://btech.com/api/v1/green/discovery/api/v1/collections/products": "404 <!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/><meta name=\"viewport\" content=\"width=de",
- "https://btech.com/api/v1/green/discovery/collections/products": "404 <!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/><meta name=\"viewport\" content=\"width=de",
- "https://btech.com/discovery/api/v1/collections/products": "404 <!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta name=\"robots",
- "https://btech.com/api/v1/collections/products": "404 <!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/><meta name=\"viewport\" content=\"width=de",
- "https://www.btech.com/api/v1/green/discovery/api/v1/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
- "https://www.btech.com/api/v1/green/discovery/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
- "https://www.btech.com/discovery/api/v1/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
- "https://www.btech.com/api/v1/collections/products": "520 {\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-520/\",\"title\":\"Error 520: Web server is returning an unkn",
- "https://retail-online-prod.btech.com/api/v1/green/discovery/api/v1/collections/products": "0 ERR <urlopen error timed out>",
- "https://retail-online-prod.btech.com/api/v1/green/discovery/collections/products": "0 ERR <urlopen error timed out>",
- "https://retail-online-prod.btech.com/discovery/api/v1/collections/products": "0 ERR <urlopen error timed out>",
- "https://retail-online-prod.btech.com/api/v1/collections/products": "0 ERR <urlopen error timed out>",
- "retail-online-prod root": "0 ERR <urlopen error timed out>",
- "retail root": "404 "
+ "filters_head": " Phones\"}},\"seller_name\":\"B.TECH\",\"store_name\":\"B.TECH\",\"tech_care\":[]}],\"total_items\":866,\"page\":1,\"page_size\":20,\"total_pages\":44,\"filters\":[\"$9e:props:children:1:props:children:1:props:filters:0\",{\"key\":\"categories\",\"name\":\"الفئة\",\"type\":\"multi_select\",\"style\":\"checkbox\",\"options\":[{\"id\":\"audio-recording\",\"value\":\"اجهزة صوت وتسجيل\",\"count\":473,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"audio\",\"value\":\"اجهزة صوت\",\"count\":296,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"microphones-accessories\",\"value\":\"اكسسوارات ميكروفون\",\"count\":2,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"portable-bluetooth-speakers\",\"value\":\"مكبرات صوت بلوتوث محمولة\",\"count\":244,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"microphones\",\"value\":\"ميكروفونات\",\"count\":49,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"mixers\",\"value\":\"ميكسر صوت\",\"count\":1,\"selected\":false,\"hex\":null,\"options\":null}]},{\"id\":\"headphones\",\"value\":\"سماعات رأس \",\"count\":177,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"on-ear-headphones\",\"value\":\"سماعات رأس صغيرة على الاذن\",\"count\":41,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"over-ear-headphones\",\"value\":\"سماعات رأس كبيرة فوق الاذن\",\"count\":136,\"selected\":false,\"hex\":null,\"options\":null}]}]},{\"id\":\"small-home-appliances\",\"value\":\"اجهزة منزلية صغيرة \",\"count\":4256,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"hot-plates-electric-stoves\",\"value\":\"أسطح تسخين وبوتاجازات محمولة\",\"count\":53,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"hot-plates\",\"value\":\"أسطح تسخين\",\"count\":38,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"electric-cooking-stoves\",\"value\":\"بوتاجازات محمولة\",\"count\":15,\"selected\":false,\"hex\":null,\"options\":null}]},{\"id\":\"air-treatment\",\"value\":\"اجهزة معالجة الهواء\",\"count\":10,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"air-humidifiers\",\"value\":\"اجهزة ترطيب الهواء\",\"count\":1,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"essential-oil-diffuser\",\"value\":\"اجهزة تعطير\",\"count\":1,\"selected\":false,\"hex\":null,\"options\":null}",
+ "filter_keys": [
+  [
+   "brands",
+   "العلامة التجارية",
+   "multi_select"
+  ],
+  [
+   "price_range",
+   "السعر",
+   "range"
+  ],
+  [
+   "colors",
+   "اللون",
+   "multi_select"
+  ],
+  [
+   "is_sold_by_btech_only",
+   "يباع بواسطة بي تك",
+   "toggle"
+  ],
+  [
+   "is_fulfilled_by_btech",
+   "يشحن من بي تك",
+   "toggle"
+  ],
+  [
+   "number_of_sim",
+   "Number Of Sim",
+   "multi_select"
+  ],
+  [
+   "battery_capacity",
+   "سعة البطارية",
+   "multi_select"
+  ],
+  [
+   "grade",
+   "الدرجة",
+   "multi_select"
+  ],
+  [
+   "primary_camera",
+   "Primary Camera",
+   "multi_select"
+  ],
+  [
+   "front_camera",
+   "Front Camera",
+   "multi_select"
+  ],
+  [
+   "ram",
+   "الرام",
+   "multi_select"
+  ],
+  [
+   "operating_system_type",
+   "Operating System Type",
+   "multi_select"
+  ],
+  [
+   "screen_size",
+   "حجم الشاشة",
+   "multi_select"
+  ],
+  [
+   "sim_type",
+   "Sim Type",
+   "multi_select"
+  ],
+  [
+   "display_resolution",
+   "دقة الشاشة",
+   "multi_select"
+  ],
+  [
+   "storage_capacity",
+   "سعة التخزين",
+   "multi_select"
+  ],
+  [
+   "model_name",
+   "Model Name",
+   "multi_select"
+  ],
+  [
+   "categories",
+   "الفئة",
+   "multi_select"
+  ]
+ ],
+ "brand_head": null,
+ "base": {
+  "meta": [
+   "866",
+   "1",
+   "20",
+   "44"
+  ],
+  "names": []
+ },
+ "tests": {
+  "?brand=samsung": {
+   "st": 200,
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "names": []
+  },
+  "?brands=samsung": {
+   "st": 200,
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "names": []
+  },
+  "?filters=brand:samsung": {
+   "st": 200,
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "names": []
+  },
+  "?filter[brand]=samsung": {
+   "st": 400,
+   "meta": null,
+   "names": []
+  },
+  "?brand%5B%5D=samsung": {
+   "st": 400,
+   "meta": null,
+   "names": []
+  },
+  "?brand=Samsung": {
+   "st": 200,
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "names": []
+  },
+  "?manufacturer=samsung": {
+   "st": 200,
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "names": []
+  },
+  "?brand_name=samsung": {
+   "st": 200,
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "names": []
+  },
+  "ech.com/ar/c/mobiles-tablets/smartphones": {
+   "st": 200,
+   "meta": [
+    "815",
+    "1",
+    "20",
+    "41"
+   ],
+   "names": []
+  },
+  "s://btech.com/ar/c/samsung-mobile-phones": {
+   "st": 200,
+   "meta": null,
+   "names": []
+  },
+  "https://btech.com/ar/brand/samsung": {
+   "st": 404,
+   "meta": null,
+   "names": []
+  }
+ }
 }
