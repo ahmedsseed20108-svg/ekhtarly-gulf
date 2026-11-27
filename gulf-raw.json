@@ -1,197 +1,305 @@
 {
- "filters_head": " Phones\"}},\"seller_name\":\"B.TECH\",\"store_name\":\"B.TECH\",\"tech_care\":[]}],\"total_items\":866,\"page\":1,\"page_size\":20,\"total_pages\":44,\"filters\":[\"$9e:props:children:1:props:children:1:props:filters:0\",{\"key\":\"categories\",\"name\":\"الفئة\",\"type\":\"multi_select\",\"style\":\"checkbox\",\"options\":[{\"id\":\"audio-recording\",\"value\":\"اجهزة صوت وتسجيل\",\"count\":473,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"audio\",\"value\":\"اجهزة صوت\",\"count\":296,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"microphones-accessories\",\"value\":\"اكسسوارات ميكروفون\",\"count\":2,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"portable-bluetooth-speakers\",\"value\":\"مكبرات صوت بلوتوث محمولة\",\"count\":244,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"microphones\",\"value\":\"ميكروفونات\",\"count\":49,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"mixers\",\"value\":\"ميكسر صوت\",\"count\":1,\"selected\":false,\"hex\":null,\"options\":null}]},{\"id\":\"headphones\",\"value\":\"سماعات رأس \",\"count\":177,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"on-ear-headphones\",\"value\":\"سماعات رأس صغيرة على الاذن\",\"count\":41,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"over-ear-headphones\",\"value\":\"سماعات رأس كبيرة فوق الاذن\",\"count\":136,\"selected\":false,\"hex\":null,\"options\":null}]}]},{\"id\":\"small-home-appliances\",\"value\":\"اجهزة منزلية صغيرة \",\"count\":4256,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"hot-plates-electric-stoves\",\"value\":\"أسطح تسخين وبوتاجازات محمولة\",\"count\":53,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"hot-plates\",\"value\":\"أسطح تسخين\",\"count\":38,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"electric-cooking-stoves\",\"value\":\"بوتاجازات محمولة\",\"count\":15,\"selected\":false,\"hex\":null,\"options\":null}]},{\"id\":\"air-treatment\",\"value\":\"اجهزة معالجة الهواء\",\"count\":10,\"selected\":false,\"hex\":null,\"options\":[{\"id\":\"air-humidifiers\",\"value\":\"اجهزة ترطيب الهواء\",\"count\":1,\"selected\":false,\"hex\":null,\"options\":null},{\"id\":\"essential-oil-diffuser\",\"value\":\"اجهزة تعطير\",\"count\":1,\"selected\":false,\"hex\":null,\"options\":null}",
- "filter_keys": [
+ "brand_ids": [
   [
-   "brands",
-   "العلامة التجارية",
-   "multi_select"
+   "apple",
+   "ابل",
+   "166"
   ],
   [
-   "price_range",
-   "السعر",
-   "range"
+   "hmd",
+   "اتش ام دي",
+   "3"
   ],
   [
-   "colors",
-   "اللون",
-   "multi_select"
+   "action",
+   "اكشن",
+   "3"
   ],
   [
-   "is_sold_by_btech_only",
-   "يباع بواسطة بي تك",
-   "toggle"
+   "infinix",
+   "انفنكس",
+   "69"
   ],
   [
-   "is_fulfilled_by_btech",
-   "يشحن من بي تك",
-   "toggle"
+   "oppo",
+   "اوبو",
+   "64"
   ],
   [
-   "number_of_sim",
-   "Number Of Sim",
-   "multi_select"
+   "allcall",
+   "اول كول",
+   "3"
   ],
   [
-   "battery_capacity",
-   "سعة البطارية",
-   "multi_select"
+   "itel",
+   "ايتل",
+   "17"
   ],
   [
-   "grade",
-   "الدرجة",
-   "multi_select"
+   "tecno",
+   "تكنو",
+   "30"
   ],
   [
-   "primary_camera",
-   "Primary Camera",
-   "multi_select"
+   "realme",
+   "ريلمي",
+   "61"
   ],
   [
-   "front_camera",
-   "Front Camera",
-   "multi_select"
+   "zte",
+   "زد تي اي",
+   "3"
   ],
   [
-   "ram",
-   "الرام",
-   "multi_select"
+   "samsung",
+   "سامسونج",
+   "156"
   ],
   [
-   "operating_system_type",
-   "Operating System Type",
-   "multi_select"
-  ],
-  [
-   "screen_size",
-   "حجم الشاشة",
-   "multi_select"
-  ],
-  [
-   "sim_type",
-   "Sim Type",
-   "multi_select"
-  ],
-  [
-   "display_resolution",
-   "دقة الشاشة",
-   "multi_select"
-  ],
-  [
-   "storage_capacity",
-   "سعة التخزين",
-   "multi_select"
-  ],
-  [
-   "model_name",
-   "Model Name",
-   "multi_select"
-  ],
-  [
-   "categories",
-   "الفئة",
-   "multi_select"
+   "sunelan",
+   "سونيلان",
+   "5"
   ]
  ],
- "brand_head": null,
- "base": {
-  "meta": [
-   "866",
-   "1",
-   "20",
-   "44"
-  ],
-  "names": []
- },
+ "bid": "samsung",
  "tests": {
-  "?brand=samsung": {
-   "st": 200,
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
-   ],
-   "names": []
-  },
   "?brands=samsung": {
-   "st": 200,
    "meta": [
     "866",
     "1",
     "20",
     "44"
    ],
-   "names": []
-  },
-  "?filters=brand:samsung": {
-   "st": 200,
-   "meta": [
-    "866",
-    "1",
-    "20",
-    "44"
+   "skus": [
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17BK00L007",
+    "6647A735ABBBBE5B8D6C"
    ],
-   "names": []
+   "st": 200,
+   "diff": true
   },
-  "?filter[brand]=samsung": {
+  "?brands[]=samsung": {
+   "meta": null,
+   "skus": [],
    "st": 400,
-   "meta": null,
-   "names": []
+   "diff": true
   },
-  "?brand%5B%5D=samsung": {
+  "?brands%5B%5D=samsung": {
+   "meta": null,
+   "skus": [],
    "st": 400,
-   "meta": null,
-   "names": []
+   "diff": true
   },
-  "?brand=Samsung": {
-   "st": 200,
+  "?filters=brands:samsung": {
    "meta": [
     "866",
     "1",
     "20",
     "44"
    ],
-   "names": []
-  },
-  "?manufacturer=samsung": {
+   "skus": [
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17BK00L007",
+    "6647A735ABBBBE5B8D6C"
+   ],
    "st": 200,
+   "diff": true
+  },
+  "?filters[brands]=samsung": {
+   "meta": null,
+   "skus": [],
+   "st": 400,
+   "diff": true
+  },
+  "?filter=brands:samsung": {
    "meta": [
     "866",
     "1",
     "20",
     "44"
    ],
-   "names": []
-  },
-  "?brand_name=samsung": {
+   "skus": [
+    "1BAPOMSMIP17BK00L007",
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17LAV0L064"
+   ],
    "st": 200,
+   "diff": true
+  },
+  "?f=brands:samsung": {
    "meta": [
     "866",
     "1",
     "20",
     "44"
    ],
-   "names": []
-  },
-  "ech.com/ar/c/mobiles-tablets/smartphones": {
+   "skus": [
+    "1BAPOMSMIP17BK00L007",
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17LAV0L064"
+   ],
    "st": 200,
+   "diff": true
+  },
+  "?brands=samsung&page=1": {
    "meta": [
-    "815",
+    "866",
     "1",
     "20",
-    "41"
+    "44"
    ],
-   "names": []
-  },
-  "s://btech.com/ar/c/samsung-mobile-phones": {
+   "skus": [
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17BK00L007",
+    "6647A735ABBBBE5B8D6C"
+   ],
    "st": 200,
-   "meta": null,
-   "names": []
+   "diff": true
   },
-  "https://btech.com/ar/brand/samsung": {
-   "st": 404,
-   "meta": null,
-   "names": []
+  "?sort_by=price_asc": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17BK00L007",
+    "6647A735ABBBBE5B8D6C"
+   ],
+   "st": 200,
+   "diff": true
+  },
+  "?sort_by=price_desc": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "1BAPOMSMIP17BK00L007",
+    "1BAPMOBIIP18PM25L004",
+    "6647A735ABBBBE5B8D6C"
+   ],
+   "st": 200,
+   "diff": false
+  },
+  "?sort_by=newest": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "1BAPOMSMIP17BK00L007",
+    "1BAPMOBIIP18PM25L004",
+    "6647A735ABBBBE5B8D6C"
+   ],
+   "st": 200,
+   "diff": false
+  },
+  "?sort=price_asc": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "5F8126D2537B45654644",
+    "52AC90C5E2AD9EEDF8DE",
+    "1BA0340B31396778A8B5"
+   ],
+   "st": 200,
+   "diff": true
+  },
+  "?sort=price_desc": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "60675EC41B7CEE6FBCF8",
+    "DA2CF019CEF6D43C9B40",
+    "6E5DAA11B2E912CD2959"
+   ],
+   "st": 200,
+   "diff": true
+  },
+  "?sortBy=price_asc": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17BK00L007",
+    "6647A735ABBBBE5B8D6C"
+   ],
+   "st": 200,
+   "diff": true
+  },
+  "?order_by=price_asc": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17BK00L007",
+    "6647A735ABBBBE5B8D6C"
+   ],
+   "st": 200,
+   "diff": true
+  },
+  "?sort_by=price-asc": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "1BAPOMSMIP17BK00L007",
+    "1BAPMOBIIP18PM25L004",
+    "1BAPOMSMIP17LAV0L064"
+   ],
+   "st": 200,
+   "diff": true
+  },
+  "?sort_by=price_low_to_high": {
+   "meta": [
+    "866",
+    "1",
+    "20",
+    "44"
+   ],
+   "skus": [
+    "1BAPOMSMIP17BK00L007",
+    "1BAPMOBIIP18PM25L004",
+    "6647A735ABBBBE5B8D6C"
+   ],
+   "st": 200,
+   "diff": false
   }
+ },
+ "code_snips": {
+  "d0mv5g_q7.js70725": "eturn e&&e.value},Tp=dt(\"iterator\"),Mp=!a(function(){var t=new URL(\"b?a=1&b=2&c=3\",\"https://a\"),e=t.searchParams,r=new URLSearchParams(\"a=1&a=2&b=3\"),n=\"\";return t.pathname=\"c%20d\",e.forEach(function(t,r){e.delete(\"b\"),n+=r+t}),r.delete(\"a\",2),r.delete(\"b\",void 0),!e.size&&!u||!e.sort||\"https://a/c%20d?a=1&c=3\"!==t.hre",
+  "d0mv5g_q7.js70744": "p=dt(\"iterator\"),Mp=!a(function(){var t=new URL(\"b?a=1&b=2&c=3\",\"https://a\"),e=t.searchParams,r=new URLSearchParams(\"a=1&a=2&b=3\"),n=\"\";return t.pathname=\"c%20d\",e.forEach(function(t,r){e.delete(\"b\"),n+=r+t}),r.delete(\"a\",2),r.delete(\"b\",void 0),!e.size&&!u||!e.sort||\"https://a/c%20d?a=1&c=3\"!==t.href||\"3\"!==e.get(\"c\")",
+  "d0mv5g_q7.js70985": "d 0),!e.size&&!u||!e.sort||\"https://a/c%20d?a=1&c=3\"!==t.href||\"3\"!==e.get(\"c\")||\"a=1\"!==String(new URLSearchParams(\"?a=1\"))||!e[Tp]||\"a\"!==new URL(\"https://a@b\").username||\"b\"!==new URLSearchParams(new URLSearchParams(\"a=b\")).get(\"a\")||\"xn--e1aybc\"!==new URL(\"https://тест\").host||\"#%D0%B1\"!==new URL(\"https://a#б\").has",
+  "cmvydppuv.js98340": "ar t=e.i(618566),n=e.i(271645);e.s([\"f\",0,()=>{let e=(0,t.useRouter)(),r=(0,t.usePathname)(),i=(0,t.useSearchParams)(),l=(0,n.useMemo)(()=>{let e=i.get(\"filters\");if(!e)return{};try{return JSON.parse(e)}catch{return{}}},[i]),s=i.get(\"sort\")||void 0,o=(0,n.useCallback)(t=>{let n=t.toString();n!==i.toString()&&e.push(n?`",
+  "cmvydppuv.js98972": "N.stringify(n)):t.delete(\"filters\"),t.delete(\"page\"),o(t)},[i,o]),u=(0,n.useCallback)(e=>{let t=new URLSearchParams(i);e?t.set(\"sort\",e):t.delete(\"sort\"),t.delete(\"page\"),o(t)},[i,o]),c=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"page\"),o(e)},[i,o]),d=(0,n.useCallback)(()=>{let e=n",
+  "cmvydppuv.js99091": "e?t.set(\"sort\",e):t.delete(\"sort\"),t.delete(\"page\"),o(t)},[i,o]),c=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"page\"),o(e)},[i,o]),d=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"sort\"),e.delete(\"page\"),o(e)},[i,o]),h=(0,n.useCallback)(e=>{let t=",
+  "cmvydppuv.js99195": "earchParams(i);e.delete(\"filters\"),e.delete(\"page\"),o(e)},[i,o]),d=(0,n.useCallback)(()=>{let e=new URLSearchParams(i);e.delete(\"filters\"),e.delete(\"sort\"),e.delete(\"page\"),o(e)},[i,o]),h=(0,n.useCallback)(e=>{let t={...l};delete t[e],a(t)},[l,a]);return{filters:l,sort:s,updateFilters:a,updateSort:u,clearFilters:c,clea",
+  "xk_mkc9no.js58691": "mEntries(Object.entries(e).filter(([,t])=>null!=t));if(0===Object.keys(i).length)return t;let r=new URLSearchParams(i).toString();return`${t}?${r}`}])},151329,t=>{t.i(490466);let e=async(t,e,i=!1)=>{await Promise.all(e.map(e=>t.invalidateQueries({queryKey:e,exact:i,refetchType:\"all\"})))},i=async(t,e)=>{await Promise.al"
  }
 }
